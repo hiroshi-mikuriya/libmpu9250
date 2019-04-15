@@ -90,9 +90,8 @@ static int read_register(short * dst, uint8_t reg)
     }
     if (err)
         return err;
-    for (int i = 0; i < 3; ++i) {
+    for (int i = 0; i < 3; ++i)
         dst[i] = (short)((buf[i * 2] << 8) + (buf[i * 2 + 1] & 0xFF));
-    }
     return 0;
 }
 
@@ -123,8 +122,7 @@ int mpu9250_read_mag(short * mag)
     err = i2c_read_with_init(AK8963_ADDR, REG_MAG_HXL, buf, sizeof(buf));
     if (err)
         return err;
-    for (int i = 0; i < 3; ++i) {
+    for (int i = 0; i < 3; ++i)
         mag[i] = (short)((buf[i * 2] & 0xFF) + (buf[i * 2 + 1] << 8)); // TODO: use Adj
-    }
     return 0;
 }
