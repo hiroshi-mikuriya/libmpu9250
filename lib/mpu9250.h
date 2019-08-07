@@ -22,21 +22,21 @@ int mpu9250_spi_init(int cs);
  * @param[out] accel 3 * 2バイトのバッファ
  * @return 0:成功、0以外:エラー
  */
-int mpu9250_read_accel(short * accel);
+int mpu9250_read_accel(short* accel);
 
 /**
  * ジャイロを取得する
  * @param[out] gyro 3 * 2バイトのバッファ
  * @return 0:成功、0以外:エラー
  */
-int mpu9250_read_gyro(short * gyro);
+int mpu9250_read_gyro(short* gyro);
 
 /**
  * 方位を取得する(I2Cモードのみ)
  * @param[out] mag 3 * 2バイトのバッファ
  * @return 0:成功、0以外:エラー
  */
-int mpu9250_read_mag(short * mag);
+int mpu9250_read_mag(short* mag);
 
 #ifdef __cplusplus
 }
